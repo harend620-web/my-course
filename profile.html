@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f9;
+            color: #222;
+            padding-bottom: 30px;
+        }
+/* Header & Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #fcf9f9;
+            box-shadow: 0 1px 3px rgba(245, 0, 0, 0.10196078431372549);
+        }
+
+             .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fc0822;
+        }
+
+        .logo span {
+            color: #1211fa;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 18px;
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+        }
+
+        .profile-icon {
+            width: 80px;
+            height: 80px;
+            background: #b0b4bb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 15px;
+        }
+
+        .profile-name {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .profile-email {
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .info {
+            border-bottom: 1px solid #eee;
+            padding: 14px 0;
+        }
+
+        .info:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .value {
+            font-size: 15px;
+            font-weight: bold;
+        }
+.edit-btn {
+    width: 100%;
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 13px;
+    border-radius: 8px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+        .logout-btn {
+            width: 100%;
+            border: none;
+            background: #dc2626;
+            color: white;
+            padding: 13px;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo"><b>Harendra</b> <span><b>Academy</b></span></div>
+      <a href="#">
+    👤My Profile
+       </a>
+    </header>
+
+<div class="container">
+
+    <a href="dashboard.html" class="back">
+        ← Back to Dashboard
+    </a>
+
+    <div class="card">
+
+        <div class="profile-icon">
+            👤
+        </div>
+
+        <div class="profile-name" id="profileName">
+            User
+        </div>
+
+        <div class="profile-email" id="profileEmail">
+            user@example.com
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="info">
+
+            <div class="label">
+                Full Name
+            </div>
+
+            <div class="value" id="name">
+                -
+            </div>
+
+        </div>
+
+
+        <div class="info">
+
+            <div class="label">
+                Email
+            </div>
+
+            <div class="value" id="email">
+                -
+            </div>
+
+        </div>
+
+
+        <div class="info">
+
+            <div class="label">
+                Account Type
+            </div>
+
+            <div class="value">
+                Client
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+    <button
+        class="edit-btn"
+        onclick="editProfile()">
+        Edit Profile
+
+    </button>
+
+    <button
+        class="logout-btn"
+        onclick="logout()">
+        Logout
+    </button>
+
+    </div>
+</div>
+
+
+<script>
+
+const loggedIn =
+    localStorage.getItem("loggedIn");
+
+if (loggedIn !== "true") {
+
+    window.location.href =
+        "login.html";
+}
+
+
+const savedName =
+    localStorage.getItem("demoName") || "User";
+
+const savedEmail =
+    localStorage.getItem("demoEmail") || "user@example.com";
+
+
+document.getElementById("profileName")
+    .textContent = savedName;
+
+document.getElementById("profileEmail")
+    .textContent = savedEmail;
+
+document.getElementById("name")
+    .textContent = savedName;
+
+document.getElementById("email")
+    .textContent = savedEmail;
+
+function editProfile() {
+
+    const newName =
+        prompt("Enter your new name:", savedName);
+
+    if (!newName || newName.trim() === "") {
+        return;
+    }
+
+    localStorage.setItem(
+        "demoName",
+        newName.trim()
+    );
+
+    document.getElementById("profileName")
+        .textContent = newName.trim();
+
+    document.getElementById("name")
+        .textContent = newName.trim();
+
+    alert("Profile updated successfully!");
+  }
+function logout() {
+
+    localStorage.removeItem("loggedIn");
+
+    window.location.href =
+        "login.html";
+}
+
+</script>
+
+</body>
+</html>

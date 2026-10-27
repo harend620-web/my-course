@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment & Verification</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #ffffff; margin: 0; padding: 0; text-align: center; }
+      
+      /* Header & Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(245, 0, 0, 0.10196078431372549);
+        }
+
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #fc0822;
+        }
+
+        .logo span {
+            color: #1211fa;
+        }
+
+        .btn-register {
+            background-color: #150861;
+            color: #fff;
+            padding: 5px 13px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+      .container { max-width: 330px; margin:15px auto; background: hwb(158 95% 2%); padding: 5px; border-radius: 15px; box-shadow: 0 2px 3px rgba(226, 226, 226, 0.10196078431372549); }
+        h2 { color: #0a7938; }
+      h4 {color:hwb(15 5% 38%)}
+        .qr-section img { width: 250px; height: 250px; border: 2px solid #ddd; border-radius: 10px; margin-bottom: 20px; }
+        .form-group { text-align: left; margin-bottom: 15px; }
+        .form-group label { font-weight: bold; display: block; margin-bottom: 5px; }
+        .form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        .btn-submit { width: 100%; padding: 15px; font-size: 1.1em; color: white; background-color: #28a745; border: none; border-radius: 5px; cursor: pointer; }
+        .btn-submit:hover { background-color: #0e9635; }
+        .note { font-size: 0.9em; color: #d91111; margin-top: 15px; }
+    </style>
+</head>
+<body>
+<!-- Header -->
+    <header>
+        <div class="logo"><b>Harendra</b> <span><b>Academy</b></span></div>
+        <a href="dashboard.html" class="btn-register">← Back</a>
+    </header>
+
+  
+    <div class="container">
+        <h2>Complete Your Payment</h2>
+        <p>Niche diye gaye QR Code ko scan karke payment karein.ya UPI </p>
+        <h4>Payment Amount = Jo Course Ki Price hai Jise aap Purchase karna chahte </h4>
+    
+      <form>
+        <h2>Payment Gateway</h2>
+<input type="radio" name="payment gateway" value="payment gateway">QR CODE</input>
+        <input type="radio" name="payment gateway" value="payment gateway">UPI: 6206753604@ybl</input>
+      </form>
+      <br>
+      <div class="qr-section">
+            <!-- Yahan 'your-qr-code.jpg' ki jagah apne khud ke QR code image ka naam dalein -->
+            <img src="qrcode.png" width="250" height="300"> 
+        </div>
+
+        <!-- Formspree ka use karke form data seedhe apne email par mangwayein -->
+        <form action="https://formspree.io/f/meaegbjk" method="POST">
+            
+          
+          <div class="form-group">
+                <label for="name">Course Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter Your Course Name ">
+            </div>
+<div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter Your Name ">
+</div>
+
+
+          
+            <div class="form-group">
+                <label for="email"> Email :</label>
+                <input type="email" id="email" name="email" required placeholder="example@gmail.com">
+            </div>
+            <div class="form-group">
+                <label for="utr">12-Digit UTR / Transaction No.:</label>
+                <input type="text" id="utr" name="utr" required placeholder="E.g., 234567890123">
+            </div>
+            <button type="submit" class="btn-submit">Submit Payment Details</button>
+        </form>
+
+        <p class="note">Payment verify hone ke 2 ghante ke andar aapke email pr jo course buy kiye hi uska access Password bhej diya jayega.Taki aap id login kar ke course section me jakar course open kr sake</p>
+    </div>
+
+  <h4 style="background-color:hwb(229 8% 24%); color:white; text-align: center;"><marquee> Harendra Academy 24×7 hour Any Problem Contact Me 6206753604.</marquee></h4>
+
+  <script>
+const params = new URLSearchParams(window.location.search);
+const amount = params.get("amount");
+
+if (amount !== null && amount.trim() !== "" &&
+    Number.isFinite(Number(amount)) && Number(amount) > 0) {
+    document.getElementById("paymentAmount").textContent = amount;
+} else {
+    document.getElementById("paymentAmount").textContent = "Not specified";
+}
+  </script>
+</body>
+</html>

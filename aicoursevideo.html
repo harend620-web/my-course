@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> aicoursevideo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin:0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    /* Header & Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(245, 0, 0, 0.10196078431372549);
+        }
+
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #fc0822;
+        }
+
+        .logo span {
+            color: #1211fa;
+        }
+
+        .btn-register {
+            background-color: #150861;
+            color: #fff;
+            padding: 5px 13px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+    /* Banner Box */
+    .banner-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+      text-align: center;
+      padding: 10px 10px 10px;
+    }
+
+    .banner-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      color: #010101;
+    }
+
+
+    .banner-subtitle {
+      color: #16a34a;
+      font-weight: 700;
+      font-size: 15px;
+      margin-top: 4px;
+    }
+
+    .banner-tagline {
+      font-weight: 700;
+      font-size: 14px;
+      margin-top: 4px;
+      color: #1e293b;
+    }
+
+    .banner-highlight {
+      font-weight: 800;
+      font-size: 15px;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+
+    /* Tabs */
+    .course-tabs {
+      display: flex;
+      border-bottom: 2px solid #e2e8f0;
+      margin-bottom: 16px;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 10px 16px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #0c0f14;
+      cursor: pointer;
+    }
+
+    .tab-btn.active {
+      color: #131415;
+      border-bottom: 3px solid #eb255e;
+    }
+
+    /* About Section */
+    .about-section h3, .curriculum-section h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #081a89;
+      margin-bottom: 8px;
+    }
+
+    .about-text {
+      font-size: 14px;
+      color: #2f3237;
+      line-height: 1.6;
+    }
+
+    /* Pricing Card */
+    
+    .pricing-card {
+      background: #ffffff;
+      border: 1px solid #d6dfea;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 20px 0;
+      box-shadow:0 2px 6px rgba(230, 26, 26, 0.0392156862745098);
+    }
+.stars {
+      color: #f59e0b;
+      font-size: 13px;
+    }
+
+    .rating-text {
+      font-size: 13px;
+      color: #475569;
+    }
+    .prices {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .current-price {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .old-price {
+      font-size: 15px;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+
+    .cart-btn {
+      width: 100%;
+      background: #11ba6d;
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .cart-btn:hover {
+      background: #11ba6d;
+    }
+
+    .extra-info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    /* Curriculum Accordion */
+    .curriculum-accordion {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .accordion-header {
+      padding: 12px 16px;
+      background: #f1f5f9;
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .lesson-list {
+      list-style: none;
+    }
+
+    .lesson-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      border-top: 1px solid #e2e8f0;
+      font-size: 13px;
+      color: #334155;
+    }
+
+    .lesson-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lesson-time {
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+    <header>
+        <div class="logo"><b>Harendra</b> <span><b>Academy</b></span></div>
+        <a href="course.html" class="btn-register">← Back</a>
+    </header>
+
+    <!-- Course Banner Card -->
+    <div class="banner-card">
+      <div class="banner-header">
+
+        <h2>💻Artificial Intelligence Course</h2>
+      </div>
+      <p class="banner-subtitle"><i class="fa-solid fa-circle-check"></i> Basic to Advance</p>
+      <p class="banner-tagline">🔥 बिल्कुल शुरु से सीखें 🔥</p>
+      <br>
+      <div class="banner-img-box">
+      <img src="ai.png" width="300px" height="150"
+      </div>
+    </div>
+
+    <!-- Curriculum Section -->
+    <section class="curriculum-section">
+      <h3>Course Video</h3>
+      <div class="curriculum-accordion">
+        <div class="accordion-header" onclick="toggleAccordion()">
+          <span>Artificial Intelligence Course</span>
+          <i class="fa-solid fa-chevron-down" id="acc-arrow"></i>
+        </div>
+        <ul class="lesson-list" id="lessonList">
+          <li class="lesson-item">
+            <span class="lesson-title"><i class="fa-regular fa-circle-play"></i> Class – 1 | MS Word (Introduction)</span>
+            <span class="lesson-time"><i class="fa-solid fa-lock"></i></span>
+          </li>
+          <li class="lesson-item">
+            <span class="lesson-title"><i class="fa-regular fa-circle-play"></i> Class – 2 | MS Word Interface</span>
+            <span class="lesson-time"><i class="fa-solid fa-lock"></i></span>
+          </li>
+          <li class="lesson-item">
+            <span class="lesson-title"><i class="fa-regular fa-circle-play"></i> Class – 3 | Quick Access Tool Bar</span>
+            <span class="lesson-time"><i class="fa-solid fa-lock"></i> </span>
+          </li>
+          <li class="lesson-item">
+          <span class="lesson-title"><i class="fa-regular fa-circle-play"></i>
+            <a href="#">Chapter 4</a>
+          
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function toggleAccordion() {
+      const list = document.getElementById('lessonList');
+      const arrow = document.getElementById('acc-arrow');
+      if (list.style.display === 'none') {
+        list.style.display = 'block';
+        arrow.style.transform = 'rotate(0deg)';
+      } else {
+        list.style.display = 'none';
+        arrow.style.transform = 'rotate(180deg)';
+      }
+    }
+  </script>
+</body>
+</html>

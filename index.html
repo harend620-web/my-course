@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harendra Academy - Computer Education</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #000000;
+        }
+
+        /* Header & Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(245, 0, 0, 0.10196078431372549);
+        }
+
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #fc0822;
+        }
+
+        .logo span {
+            color: #1211fa;
+        }
+
+        .btn-register {
+            background-color: #443f42;
+            color: #fdfbfb;
+            padding: 5px 10px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #eeeeee;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            color: #039e09;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .btn-courses {
+            display: inline-block;
+            background-color: #0381fd;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+        }
+
+        /* Courses Section */
+        .courses-section {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .courses-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .course-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            padding-bottom: 15px;
+        }
+
+        .course-img {
+            width: 100%;
+            height: 150px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #6c757d;
+        }
+
+        .course-card h3 {
+            font-size: 16px;
+            margin: 15px 10px 5px;
+        }
+
+        .price {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #888;
+            margin-right: 8px;
+        }
+
+        .discount-price {
+            color: #d9534f;
+            font-weight: bold;
+        }
+
+        .btn-cart {
+            display: inline-block;
+            background-color: #016327;
+            color: #ffffff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+/* Stats Section */
+/* Counters Container Styling */
+.stats-container, .counter-section {
+    background-color: #fbefe6; /* Halka black / dark background */
+    margin: 25px 15px;         /* Upar-niche 25px, dono side se 15px margin */
+    padding: 30px 20px;        /* Andar ki taraf padding */
+    border-radius: 12px;       /* Corner round karne ke liye */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    text-align: center;
+}
+
+/* Numbers (Numbers ko white/light karne ke liye) */
+.stats-container h2, 
+.counter-section .counter-number {
+    color: #000000;            /* Dark background par clean white text */
+    font-size: 28px;
+    font-weight: 700;
+    margin: 10px 0 5px 0;
+} 
+
+/* Labels (Learners, Register Students, etc.) */
+.stats-container p, 
+.counter-section .counter-text {
+    color: #000000;            /* Halka grayish white text */
+    font-size: 15px;
+    margin-bottom: 25px;       /* Items ke beech space */
+}
+
+/* Blue Icons size & color */
+.stats-container i, 
+.counter-section svg {
+    color: #0926cb;            /* Bright blue icon */
+    font-size: 38px;
+}
+
+
+
+footer {
+    background-color: #0b287b; /* Dark navy/black background */
+    color: #ffffff; /* White text */
+    padding: 35px 20px;
+    text-align: center;
+    border-top: 3px solid #007bff; /* Top border accent */
+    font-family: Arial, sans-serif;
+}
+
+footer h3 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #cccccc;
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+/* Social icons styling */
+footer .social-icons a {
+    color: #0ce531f7;
+    font-size: 20px;
+    margin: 0 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #ffffff;
+}
+
+
+      
+    </style>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><b>Harendra</b> <span><b>Academy</b></span></div>
+        <a href="register.html" class="btn-register">Register</a>
+   <a href="login.html" class="btn-register">Login</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>कंप्यूटर शिक्षा का सबसे बेहतर स्थान</h1>
+        <p>सभी कंप्यूटर कोर्स सबसे कम पैसे में सीखें</p>
+        <a href="allcourses.html" class="btn-courses">All Courses</a>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="courses-section" id="courses">
+        <h2>Featured Courses</h2>
+        <div class="course-grid">
+            
+            <!-- Course 1 -->
+            <div class="course-card">
+                <img src="basiccomputer.png" width="315" height="140">
+                <h3>Basic Computer Full Course</h3>
+                <div class="price">
+                    <span class="original-price">₹500</span>
+                    <span class="discount-price">₹200</span>
+                </div>
+                <a href="register.html" class="btn-cart"><b>Enroll Now</b></a>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="course-card">
+                <img src="ai.png" width="315" height="140">
+                <h3>Artificial Intelligence Full  Course</h3>
+                <div class="price">
+                    <span class="original-price">₹1000</span>
+                    <span class="discount-price">₹399</span>
+                </div>
+                <a href="register.html" class="btn-cart">Enroll Now</a>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="course-card">
+                <img src="engspeak.png" width="315" height="140">
+                <h3>English Speaking Full Course</h3>
+                <div class="price">
+                    <span class="original-price">₹1000</span>
+                    <span class="discount-price">₹250</span>
+                </div>
+                <a href="register.html" class="btn-cart">Enroll Now</a>
+            </div>
+
+        </div>
+    </section>
+
+  <!-- Stats Counter Section -->
+  <section class="stats-container">
+    <div class="stat-box">
+      <div class="stat-icon">
+        <i class="fa-solid fa-user-graduate"></i>
+      </div>
+      <h2>4,500</h2>
+      <p><b>Learners</b></p>
+    </div>
+
+    <div class="stat-box">
+      <div class="stat-icon">
+        <i class="fa-solid fa-address-card"></i>
+      </div>
+      <h2>10,000</h2>
+      <p><b>Register Students</b></p>
+    </div>
+
+    <div class="stat-box">
+      <div class="stat-icon">
+        <i class="fa-solid fa-book-open"></i>
+      </div>
+      <h2>3</h2>
+      <p><b>Course Published</b></p>
+    </div>
+
+    <div class="stat-box">
+      <div class="stat-icon">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h2>3,000</h2>
+      <p><b>Students Completed</b></p>
+    </div>
+  </section>
+<br>
+<!-- Footer Section -->
+  <footer class="footer-section">
+    <h2>Harendra Academy</h2>
+    <p>📍 Buxar Bihar, India, 802134</p>
+    <p>📞 +91 6206753604</p>
+    <p>✉️ singhharendrakumar200@gmail.com</p>
+    
+    <div class="social-icons">
+        <!-- Social links yahan aayenge -->
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a> 
+          <a href="#"><i class="fa-brands fa-telegram"></i></a>
+    </div>
+  </footer>
+  <h4 style="background-color:hwb(0 6% 3%); color:white; text-align: center;"><marquee> Harendra Academy All rights reserved.</marquee></h4>
+
+
+</body>
+</html>
